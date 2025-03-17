@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+actor User
+actor Admin
+
+rectangle "Aplikasi EvoMoto" {
+  User --> (Membuka Aplikasi)
+  User --> (Registrasi/Login)
+  User --> (Melihat Produk)
+  User --> (Membuat Pesanan)
+  User --> (Membeli dan Pembayaran)
+  User --> (Menerima Pesanan)
+  User --> (Selesai)
+
+  Admin --> (Membuka dan Login ke Aplikasi)
+  Admin --> (Mengelola Pengguna)
+  Admin --> (Mengelola Produk)
+  Admin --> (Mengelola Transaksi)
+  Admin --> (Mengelola Laporan & Analisa)
+  Admin --> (Selesai)
+}
+
+@enduml

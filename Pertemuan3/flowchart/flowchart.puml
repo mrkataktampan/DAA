@@ -1,0 +1,43 @@
+@startuml cekbuku
+title Flowchart untuk Aplikasi Cek Buku
+
+start
+
+:Buka Aplikasi Cek Buku;
+
+:Masukkan Email dan Password;
+
+:Cek Data Login;
+
+if (Data Login Valid?) then (Ya)
+    if (Admin?) then (Ya)
+        :Login Sebagai Admin;
+        :Akses Manajemen Buku;
+        :Pilih Aksi;
+        if (Aksi = Tambah Buku) then (Tambah Buku)
+            :Masukkan Detail Buku (Judul, Penulis, Rating, Ulasan, Tahun Terbit, Genre);
+            :Simpan Buku;
+        elseif (Aksi = Edit Buku) then (Edit Buku)
+            :Pilih Buku yang Akan Diedit;
+            :Perbarui Detail Buku;
+            :Simpan Perubahan;
+        elseif (Aksi = Hapus Buku) then (Hapus Buku)
+            :Pilih Buku yang Akan Dihapus;
+            :Konfirmasi Penghapusan;
+        endif
+        :Logout;
+    else (User)
+        :Login Sebagai User;
+        :Akses Informasi Buku;
+        :Lihat Daftar Buku;
+        :Pilih Buku untuk Melihat Detail (Judul, Penulis, Rating, Ulasan, Tahun Terbit, Genre);
+        :Logout;
+    endif
+else (Tidak)
+    :Tampilkan "Data Login Tidak Valid";
+    :Kembali ke Halaman Login;
+endif
+
+stop
+
+@enduml

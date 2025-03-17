@@ -1,0 +1,34 @@
+@startuml Kendaraan
+title Flowchart untuk Aplikasi Kendaraan
+
+start
+:Mulai;
+:Login sebagai Admin;
+if (Berhasil Login?) then (Ya)
+    :Akses Dashboard;
+    :Pilih Pengelolaan Data Kendaraan;
+    if (Operasi CRUD?) then (Ya)
+        switch (Operasi CRUD)
+            case (Tambah Kendaraan)
+                :Masukkan data kendaraan baru;
+                :Simpan data ke database;
+            case (Baca Data Kendaraan)
+                :Tampilkan daftar kendaraan;
+            case (Update Kendaraan)
+                :Pilih kendaraan untuk diperbarui;
+                :Perbarui data kendaraan;
+                :Simpan perubahan;
+            case (Hapus Kendaraan)
+                :Pilih kendaraan untuk dihapus;
+                :Konfirmasi penghapusan;
+                :Hapus dari database;
+        endswitch
+    else (Tidak)
+        :Kembali ke Dashboard;
+    endif
+else (Tidak)
+    :Tampilkan pesan kesalahan login;
+endif
+:Logout;
+stop
+@enduml

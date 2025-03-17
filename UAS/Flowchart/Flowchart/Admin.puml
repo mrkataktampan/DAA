@@ -1,0 +1,26 @@
+@startuml
+start
+
+:Admin membuka aplikasi EvoMoto;
+:Admin login ke aplikasi;
+
+if (Apakah ingin mengelola pengguna?) then (Ya)
+    :Mengelola daftar pengguna;
+    :Memverifikasi atau memblokir pengguna;
+endif
+
+if (Apakah ingin mengelola produk?) then (Ya)
+    :Menambahkan, mengedit, atau menghapus produk;
+endif
+
+if (Apakah ingin mengelola transaksi?) then (Ya)
+    :Mengelola status transaksi (pembayaran/pemesanan);
+endif
+
+if (Apakah ingin melihat laporan?) then (Ya)
+    :Melihat laporan aktivitas dan analisis;
+endif
+
+:Admin keluar dari aplikasi;
+stop
+@enduml

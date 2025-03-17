@@ -1,0 +1,21 @@
+@startuml
+start
+
+:User membuka aplikasi EvoMoto;
+if (Apakah user baru?) then (Ya)
+    :User mendaftarkan akun;
+else (Tidak)
+    :User login ke aplikasi;
+endif
+:Melihat produk yang tersedia;
+if (Apakah user tertarik membeli?) then (Ya)
+    :Membuat pesanan;
+    :Melakukan pembayaran;
+    :Menunggu pesanan diterima;
+    :Proses transaksi selesai;
+else (Tidak)
+    :User keluar dari aplikasi;
+endif
+
+stop
+@enduml
