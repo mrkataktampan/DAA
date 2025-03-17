@@ -1,0 +1,38 @@
+@startuml HitungLuasSegitiga
+
+:Pengguna: as Pengguna
+(Masukkan Nilai Alas dan Tinggi) as (Input)
+(Hitung Luas Segitiga) as (Calculate)
+(Tampilkan Hasil) as (Display)
+
+Pengguna -> (Input)
+Pengguna --> (Calculate)
+Pengguna ---> (Display)
+
+note right of Pengguna
+  Pengguna memasukkan
+  nilai alas dan tinggi
+end note
+
+note right of (Input)
+  Sistem menerima input
+  nilai alas dan tinggi
+end note
+
+note right of (Calculate)
+  Sistem menghitung luas segitiga
+  dengan rumus: (alas * tinggi) / 2
+end note
+
+note right of (Display)
+  Sistem menampilkan hasil perhitungan
+  kepada pengguna
+end note
+
+note "Catatan ini terhubung\nke beberapa use case." as N2
+(Input) .. N2
+N2 .. (Calculate)
+N2 .. (Display)
+
+
+@enduml
